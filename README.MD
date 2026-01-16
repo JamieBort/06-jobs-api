@@ -1,5 +1,11 @@
 ##### Branch edits
 
+##### `project-setup` branch
+
+The files in this branch are edited for development purposes. Specifically, adding the linter dev dependency, eslint dev dependency, and the eslint.config.cjs config file.
+
+##### `project-setup-establish-server-files` branch
+
 The files that have been modified (and commited) in this `project-setup-establish-server-files` branch correspond to the video at 6:55:16 in this https://youtu.be/rltfdjcXjmk?si=wjeNmI4vImGI4PKh&t=24916 video. That is to say, this branch is up to date with the video at that timestamp.
 
 Furthermore, the code that is commented out with `*** Original code commented out ***` and `// Original code commented out` was original to the Final/ directory of the original project that this repo stems from. That is to say, original to [this](https://github.com/JamieBort/node-express-course/tree/main/06-jobs-api/final) directory.

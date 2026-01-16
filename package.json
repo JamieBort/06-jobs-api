@@ -26,6 +26,10 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.9"
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-n": "^17.23.2",
+    "nodemon": "^2.0.9",
+    "prettier": "3.8.0"
   }
 }
