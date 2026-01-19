@@ -20,6 +20,7 @@ const connectDB = require("./db/connect");
 // routers
 const authRouter = require("./routes/auth");
 const jobsRouter = require("./routes/jobs");
+
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
@@ -31,6 +32,7 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 //     max: 100, // limit each IP to 100 requests per windowMs
 //   })
 // );
+
 app.use(express.json());
 // extra packages
 // app.use(helmet()); // Original code commented out
@@ -43,6 +45,7 @@ app.use(express.json());
 app.use("/api/v1/auth", authRouter);
 // app.use("/api/v1/jobs", authenticateUser, jobsRouter); // Original code commented out
 app.use("/api/v1/jobs", jobsRouter); // NEW code
+app.use("/test", (req, res) => res.send("Yes")); // NEW code
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
@@ -53,9 +56,11 @@ const start = async () => {
 	try {
 		await connectDB(process.env.MONGO_URI); // Original code commented out
 		app.listen(port, () =>
+			// eslint-disable-next-line no-console
 			console.log(`Server is listening on port ${port}...`),
 		);
 	} catch (error) {
+		// eslint-disable-next-line no-console
 		console.log(error);
 	}
 };

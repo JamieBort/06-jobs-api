@@ -1,5 +1,9 @@
 ##### Branch edits
 
+##### `week9` branch
+
+Commit to compare to: commit 16d3a514b121764269fe9989729782c2c6d92429
+
 ##### `project-setup` branch
 
 The files in this branch are edited for development purposes. Specifically, adding the linter dev dependency, eslint dev dependency, and the eslint.config.cjs config file.
