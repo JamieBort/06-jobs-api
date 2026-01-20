@@ -16,7 +16,7 @@ const express = require("express");
 const app = express();
 
 const connectDB = require("./db/connect");
-// const authenticateUser = require("./middleware/authentication"); // Original code commented out
+const authenticateUser = require("./middleware/authentication");
 // routers
 const authRouter = require("./routes/auth");
 const jobsRouter = require("./routes/jobs");
@@ -43,9 +43,7 @@ app.use(express.json());
 
 // routes
 app.use("/api/v1/auth", authRouter);
-// app.use("/api/v1/jobs", authenticateUser, jobsRouter); // Original code commented out
-app.use("/api/v1/jobs", jobsRouter); // NEW code
-app.use("/test", (req, res) => res.send("Yes")); // NEW code
+app.use("/api/v1/jobs", authenticateUser, jobsRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
@@ -54,7 +52,7 @@ const port = process.env.PORT || 3000;
 
 const start = async () => {
 	try {
-		await connectDB(process.env.MONGO_URI); // Original code commented out
+		await connectDB(process.env.MONGO_URI);
 		app.listen(port, () =>
 			// eslint-disable-next-line no-console
 			console.log(`Server is listening on port ${port}...`),
