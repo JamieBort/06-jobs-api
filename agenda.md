@@ -34,7 +34,7 @@
     - HTTP Status Codes: https://www.npmjs.com/package/http-status-codes
     - Extend Express to forward async errors to the error handlers: https://www.npmjs.com/package/express-async-errors
 
-- My agenda and code: https://github.com/JamieBort/node-express-course
+- The agenda and code: https://github.com/JamieBort/06-jobs-api/tree/week9
 
 ## TO-DO items for this session
 
