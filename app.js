@@ -2,6 +2,7 @@
 // Main application entry point: sets up Express server, middleware, routes, and connects to the database.
 
 require("dotenv").config(); // Loads environment variables from a .env file into process.env for configuration and secrets
+// For reference https://www.npmjs.com/package/express-async-errors
 require("express-async-errors"); // Extends Express to automatically forward async errors to the error handler
 
 // extra security packages
@@ -62,7 +63,7 @@ const start = async () => {
 			port,
 			() =>
 				// eslint-disable-next-line no-console
-				console.log(`Server is listening on port ${port}...`), // Starts the HTTP server and logs successful startup
+				console.log(`Server is listening on port ${port}.`), // Starts the HTTP server and logs successful startup
 		);
 	} catch (error) {
 		// eslint-disable-next-line no-console

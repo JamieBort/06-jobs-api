@@ -3,7 +3,8 @@
 
 const mongoose = require("mongoose"); // Imports Mongoose library to define schemas and interact with MongoDB
 
-const JobSchema = new mongoose.Schema( // Defines the schema for job documents
+// Defines the schema for job documents (It defines the shape of the collection in MondgoDB.)
+const JobSchema = new mongoose.Schema(
 	{
 		company: {
 			type: String, // Field type is a string

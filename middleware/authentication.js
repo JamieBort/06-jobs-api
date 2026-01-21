@@ -23,6 +23,8 @@ const auth = async (req, res, next) => {
 
 	// Verify token is valid.
 	try {
+		// NOTE: See .env.ctd-group-session
+		// For reference https://www.npmjs.com/package/jsonwebtoken
 		const payload = jwt.verify(token, process.env.JWT_SECRET); // Verifies token using the secret key and decodes payload
 		const { id, username } = payload; // Extracts user information from the token payload
 		req.user = { id, username }; // Attaches authenticated user info to request for downstream middleware/routes

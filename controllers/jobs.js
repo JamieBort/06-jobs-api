@@ -2,6 +2,7 @@
 // Handles CRUD operations for job resources: create, read, update, delete, and list jobs for authenticated users.
 
 const Job = require("../models/Job"); // Imports the Job model to interact with job documents in the database
+// For reference https://www.npmjs.com/package/http-status-codes
 const { StatusCodes } = require("http-status-codes"); // Imports standard HTTP status codes for consistent API responses
 const { BadRequestError, NotFoundError } = require("../errors"); // Imports custom error classes for clear error handling
 

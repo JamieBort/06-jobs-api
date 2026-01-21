@@ -2,11 +2,14 @@
 // Mongoose schema and model for users, includes password hashing, JWT generation, and password comparison methods.
 
 const mongoose = require("mongoose"); // Imports Mongoose to define the User schema and interact with MongoDB
+// For reference https://www.npmjs.com/package/bcryptjs
+// NOTE: Already instaleld when `npm  install` is run.
+//       Because "bcryptjs" is alredy in the "dependencies" object of the package.json file.
 const bcrypt = require("bcryptjs"); // Library for hashing and comparing passwords securely
 const jwt = require("jsonwebtoken"); // Library for creating and verifying JSON Web Tokens
 
+// Defines the schema for user documents (It defines the shape of the collection in MondgoDB.)
 const UserSchema = new mongoose.Schema({
-	// Defines the schema for user documents
 	name: {
 		type: String, // Field type is string
 		required: [true, "Please provide name"], // Name is required
@@ -30,27 +33,29 @@ const UserSchema = new mongoose.Schema({
 	},
 });
 
-// https://mongoosejs.com/docs/middleware.html#pre
+// Pre-save middleware to hash passwords before saving
+// For reference https://mongoosejs.com/docs/middleware.html#pre
 UserSchema.pre("save", async function () {
-	// Pre-save middleware to hash passwords before saving
 	const salt = await bcrypt.genSalt(10); // Generates a salt with 10 rounds for hashing
 	this.password = await bcrypt.hash(this.password, salt); // Hashes the password and replaces plain text
 });
 
-// https://mongoosejs.com/docs/guide.html#methods
+// Instance method to generate a JWT for the user
+// For reference https://mongoosejs.com/docs/guide.html#methods
 UserSchema.methods.createJWT = function () {
-	// Instance method to generate a JWT for the user
 	return jwt.sign(
 		{ userId: this._id, name: this.name }, // Payload includes user ID and name
+		// NOTE: See .env.ctd-group-session
 		process.env.JWT_SECRET, // Secret key from environment variables
 		{
+			// NOTE: See .env.ctd-group-session
 			expiresIn: process.env.JWT_LIFETIME, // Token expiration configured via environment variables
 		},
 	);
 };
 
+// Instance method to compare a provided password with the hashed password
 UserSchema.methods.comparePassword = async function (canditatePassword) {
-	// Instance method to compare a provided password with the hashed password
 	const isMatch = await bcrypt.compare(canditatePassword, this.password); // Uses bcrypt to verify password
 	return isMatch; // Returns true if passwords match, false otherwise
 };

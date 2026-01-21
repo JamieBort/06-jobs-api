@@ -2,6 +2,9 @@
 // Handles authentication logic: user registration and login, returns JWTs for authenticated sessions.
 
 const User = require("../models/User"); // Imports the User model to interact with user data in the database
+// For reference https://www.npmjs.com/package/http-status-codes
+// NOTE: Already instaleld when `npm  install` is run.
+//       Because "http-status-codes" is alredy in the "dependencies" object of the package.json file.
 const { StatusCodes } = require("http-status-codes"); // Imports standardized HTTP status codes for consistent responses
 const { BadRequestError, UnauthenticatedError } = require("../errors"); // Imports custom error classes for clearer error handling
 
@@ -23,13 +26,16 @@ const login = async (req, res) => {
 
 	if (!email) throw new BadRequestError("Please provide email."); // Ensures an email is provided before querying the database
 	if (!password) throw new BadRequestError("Please provide password."); // Ensures a password is provided before validation
+	// NOTE: this method is build in with Mongoose: https://mongoosejs.com/docs/guide.html#methods -> "findOne()" in https://mongoosejs.com/docs/api/document.html
 	const user = await User.findOne({ email }); // Looks up a user by email in the database
 	if (!user) throw new UnauthenticatedError("The username is invalid."); // Rejects login if no matching user is found
+	// NOTE: this method comes from the ./models/User.js file.
 	const isPasswordCorrect = await user.comparePassword(password); // Compares provided password with the stored hashed password
 	if (!isPasswordCorrect)
 		throw new UnauthenticatedError("The password is invalid."); // Rejects login if the password does not match
 
 	// compare password
+	// NOTE: this method comes from the ./models/User.js file.
 	const token = user.createJWT(); // Generates a JWT for the authenticated user
 	res.status(StatusCodes.OK).json({ user: { name: user.name }, token }); // Sends success response with user info and token
 };
