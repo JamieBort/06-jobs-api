@@ -3,8 +3,8 @@
 
 const mongoose = require("mongoose"); // Imports Mongoose to define the User schema and interact with MongoDB
 // For reference https://www.npmjs.com/package/bcryptjs
-// NOTE: Already instaleld when `npm  install` is run.
-//       Because "bcryptjs" is alredy in the "dependencies" object of the package.json file.
+// NOTE: Already installed when `npm  install` is run.
+//       Because "bcryptjs" is already in the "dependencies" object of the package.json file.
 const bcrypt = require("bcryptjs"); // Library for hashing and comparing passwords securely
 const jwt = require("jsonwebtoken"); // Library for creating and verifying JSON Web Tokens
 

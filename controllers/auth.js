@@ -3,8 +3,8 @@
 
 const User = require("../models/User"); // Imports the User model to interact with user data in the database
 // For reference https://www.npmjs.com/package/http-status-codes
-// NOTE: Already instaleld when `npm  install` is run.
-//       Because "http-status-codes" is alredy in the "dependencies" object of the package.json file.
+// NOTE: Already installed when `npm  install` is run.
+//       Because "http-status-codes" is already in the "dependencies" object of the package.json file.
 const { StatusCodes } = require("http-status-codes"); // Imports standardized HTTP status codes for consistent responses
 const { BadRequestError, UnauthenticatedError } = require("../errors"); // Imports custom error classes for clearer error handling
 

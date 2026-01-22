@@ -13,7 +13,7 @@ const { UnauthenticatedError } = require("../errors"); // Imports custom error f
 const auth = async (req, res, next) => {
 	// Check header
 	const authHeader = req.headers.authorization; // Retrieves the Authorization header from the request
-	if (!authHeader) throw new UnauthenticatedError("Authentication invalide"); // Rejects request if header is missing
+	if (!authHeader) throw new UnauthenticatedError("Authentication invalid"); // Rejects request if header is missing
 	if (!authHeader.startsWith("Bearer "))
 		throw new UnauthenticatedError("No token provided"); // Rejects request if header format is incorrect
 
