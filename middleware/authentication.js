@@ -19,15 +19,14 @@ const auth = async (req, res, next) => {
 
 	const token = authHeader.split(" ")[1]; // Extracts the JWT from the header after "Bearer"
 	// eslint-disable-next-line no-console
-	console.log(token); // Logs token for debugging purposes
+	// console.log(token); // Logs token for debugging purposes
 
 	// Verify token is valid.
 	try {
 		// NOTE: See .env.ctd-group-session
 		// For reference https://www.npmjs.com/package/jsonwebtoken
 		const payload = jwt.verify(token, process.env.JWT_SECRET); // Verifies token using the secret key and decodes payload
-		const { id, username } = payload; // Extracts user information from the token payload
-		req.user = { id, username }; // Attaches authenticated user info to request for downstream middleware/routes
+		req.user = { userId: payload.userId, name: payload.name }; // Extracts authenticated user information from the token payload and attaches it to request for downstream middleware/routes.
 		next(); // Calls next middleware or route handler if authentication succeeds
 	} catch (error) {
 		// eslint-disable-next-line no-console

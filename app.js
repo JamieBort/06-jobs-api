@@ -6,10 +6,10 @@ require("dotenv").config(); // Loads environment variables from a .env file into
 require("express-async-errors"); // Extends Express to automatically forward async errors to the error handler
 
 // extra security packages
-// const helmet = require("helmet"); // Original code commented out
-// const cors = require("cors"); // Original code commented out
-// const xss = require("xss-clean"); // Original code commented out
-// const rateLimiter = require("express-rate-limit"); // Original code commented out
+const helmet = require("helmet");
+const cors = require("cors");
+const xss = require("xss-clean");
+const rateLimiter = require("express-rate-limit");
 
 // Swagger
 // const swaggerUI = require("swagger-ui-express"); // Original code commented out
@@ -30,21 +30,23 @@ const jobsRouter = require("./routes/jobs"); // Imports route handlers for job-r
 const notFoundMiddleware = require("./middleware/not-found"); // Imports middleware to handle unmatched routes (404 errors)
 const errorHandlerMiddleware = require("./middleware/error-handler"); // Imports centralized error handling logic
 
-// app.set("trust proxy", 1); // Original code commented out
-// app.use( // Original code commented out
-//   rateLimiter({
-//     windowMs: 15 * 60 * 1000, // 15 minutes
-//     max: 100, // limit each IP to 100 requests per windowMs
-//   })
-// );
+app.set("trust proxy", 1);
+app.use(
+	rateLimiter({
+		windowMs: 15 * 60 * 1000, // 15 minutes
+		max: 100, // limit each IP to 100 requests per windowMs
+	}),
+);
 
 app.use(express.json()); // Enables parsing of incoming JSON payloads so req.body contains parsed data
-// extra packages
-// app.use(helmet()); // Original code commented out
-// app.use(cors()); // Original code commented out
-// app.use(xss()); // Original code commented out
+app.use(helmet());
+app.use(cors());
+app.use(xss());
 
 // app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument)); // Original code commented out
+
+// A dummy GET route to verify everything is working once the app has been deployed.
+app.get("/", (req, res) => res.send("You've reached the Jobs API."));
 
 // routes
 app.use("/api/v1/auth", authRouter); // Registers authentication routes under a versioned API path
