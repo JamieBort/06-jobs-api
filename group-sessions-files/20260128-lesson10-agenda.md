@@ -1,5 +1,3 @@
-## Group Session Agenda 20260128 Lesson 10 Jobs API Part 2
-
 ## CtD Group Mentor Session Agenda for Lesson 10 / Jobs API Part 2.
 
 Wednesday, 21 January 2026
@@ -8,16 +6,20 @@ Wednesday, 21 January 2026
 
 ### Housekeeping Items
 
-1. Go over this agenda. It is also found here:
+1. (Briefly) Go over this agenda. It is also found here: https://github.com/JamieBort/06-jobs-api/blob/week10/group-sessions-files/20260128-lesson10-agenda.md
 
 2. Any Questions - Interrupt me at any time for questions or comments.
 
 3. Explain the [Resources](#resources-were-using-today) below.
 
-4. Lastly I will walk through the code to
+4. I will walk through the code to
    - highlight what is covered in this week's lesson,
    - explain what I wrote and and why,
    - and create opportunities for you to ask questions.
+
+   To that end, we'll briefly go through the notes I have drafted: [URL](https://github.com/JamieBort/06-jobs-api/blob/week10/group-sessions-files/20260128-lesson10-notes.md) / [Link](../group-sessions-files/20260128-lesson10-notes.md) (if you're viewing this file via the repo website)
+
+5. Lastly, I'll demonstrate the process of deploying the Node Express app to Render.
 
 ### Resources we're using today
 
@@ -29,18 +31,21 @@ Wednesday, 21 January 2026
     - cors: https://www.npmjs.com/package/cors
     - xss-clean:https://www.npmjs.com/package/xss-clean
     - express-rate-limit: https://www.npmjs.com/package/express-rate-limit
-
+- Render Dashboard: https://dashboard.render.com/
+- My notes for this session: [URL](https://github.com/JamieBort/06-jobs-api/blob/week10/group-sessions-files/20260128-lesson10-notes.md) / [link](../group-sessions-files/20260128-lesson10-notes.md) (if you're inside the repo)
 - The branch containing my code, agenda, etc. for this lesson: https://github.com/JamieBort/06-jobs-api/tree/week10
+- Link to today's video: (Come back to this file. I'll paste it here once it is published.)
 
-- Link to today's video: (Come back to this file. I'll paste it here once it is published)
+#### TO-DO items for this session
 
-### TO-DO items for this session
-
-My personal check list (to make sure I don't forget anything).
+My personal checklist (to make sure I don't forget anything).
 
 - Before meeting
-  - [ ] Paste url to this file in the agenda above.
-  - [ ] Paste url to this file in the agenda above.
+  - [x] Paste url to this file in the agenda above.
+  - [ ] Post to the announcements Slack channel regarding
+    - the presence of the notes I have drafted and
+    - my intention to walk through the process of deploying the Node Express app to Render. We may not have enough time to finish. And/or we may run into unforeseen issues. But this will be a learning experience either way.
+    - FWIW, it will be recorded.
 
 - Beginning of meeting
   - [ ] Enable live closed captions.
