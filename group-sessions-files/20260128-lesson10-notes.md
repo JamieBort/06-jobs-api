@@ -217,9 +217,19 @@ Additional thoughts
 
 Back to [Table of contents](#table-of-contents)
 
-I'll add content here if/when there is any to add.
+I intend on walking through the process of deploying the Node Express app to Render during the group mentor session. We may not have enough time to finish. And/or we may run into unforeseen issues. But this will be a learning experience either way.
 
-I intend on walking through the process of deploying the Node Express app to Render. We may not have enough time to finish. And/or we may run into unforeseen issues. But this will be a learning experience either way.
+I will add content here if/when there is any to add. If that is the case, it will be added AFTER the group mentor session is over. **Please share anything you think would be relevant to this process so that I can add it here.**
+
+Of note so far:
+
+1. https://dashboard.render.com/
+2. [Which to use](https://render.com/docs/service-types?_gl=1*1yumcws*_gcl_au*MTUzOTM2ODQ0Mi4xNzY0OTc1MDE3*_ga*ODA2NTU1NTM0LjE3NjQ5NzUwMTc.*_ga_QK9L9QJC5N*czE3Njk0NjU2MDEkbzQkZzEkdDE3Njk0NjY3MjYkajU5JGwwJGgw) link -> Flow chart directing to Web Services.
+3. [Web Services](https://render.com/docs/web-services) page lists Express as an option.
+
+Accessing the your repo from Render: https://dashboard.render.com/web/new?onboarding=active
+
+Build documentation: https://render.com/docs/deploy-node-express-app
 
 ---
 
@@ -230,22 +240,3 @@ I intend on walking through the process of deploying the Node Express app to Ren
 [6]: https://stackoverflow.com/questions/59242927/node-express-security?utm_source=chatgpt.com "Node/Express security - javascript"
 [7]: https://www.npmjs.com/package/express-rate-limit?utm_source=chatgpt.com "express-rate-limit"
 [8]: https://www.codingeasypeasy.com/blog/secure-your-express-apis-cors-rate-limiting-and-best-practices?utm_source=chatgpt.com "Secure Your Express APIs: CORS, Rate Limiting, and Best Practices | CodingEasyPeasy"
-
----
-
-Draft note to share with students in Slack regarding Swagger portion of the lesson:
-
-```
-Heads Up
-
-This lesson has an optional component with Swagger. For that, the video has you navigate to APIMatic.io to convert the exported Postman Collection json file to a format that can be imported into Swagger.
-
-I attempted to sign up for their free tier with my gmail account and received an error indicating that I needed to use a `valid business email address`.
-
-I am looking for alternatives to this website. If/when I find one, I'll follow up here to share it.
-Likewise, if anyone has an alternative, please share it with the rest of us.
-
-Thank you!
-
-EDIT: later I have received a `Unable to complete sign-up. please try again.` response to the sign-up form.
-```

@@ -42,9 +42,10 @@ My personal checklist (to make sure I don't forget anything).
 
 - Before meeting
   - [x] Paste url to this file in the agenda above.
-  - [ ] Post to the announcements Slack channel regarding
-    - the presence of the notes I have drafted and
+  - [x] Post to the announcements Slack channel regarding
+    - the presence of the notes I have drafted (The section on the dependencies is strictly for your edification - that is to say, it is more information about them and not required to complete the assignment.),
     - my intention to walk through the process of deploying the Node Express app to Render. We may not have enough time to finish. And/or we may run into unforeseen issues. But this will be a learning experience either way.
+    - the optional component with Swagger issue of using APIMatic. And
     - FWIW, it will be recorded.
 
 - Beginning of meeting
