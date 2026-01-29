@@ -215,7 +215,7 @@ Additional thoughts
 
 ### Deploying to Render.com
 
-Back to [Table of contents](#table-of-contents)
+Back to [Table of contents](#table-of-contents) above.
 
 I intend on walking through the process of deploying the Node Express app to Render during the group mentor session. We may not have enough time to finish. And/or we may run into unforeseen issues. But this will be a learning experience either way.
 

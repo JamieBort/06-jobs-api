@@ -6,20 +6,17 @@ Wednesday, 21 January 2026
 
 ### Housekeeping Items
 
-1. (Briefly) Go over this agenda. It is also found here: https://github.com/JamieBort/06-jobs-api/blob/week10/group-sessions-files/20260128-lesson10-agenda.md
+1. (Briefly) Go over this agenda. It is also found [here](https://github.com/JamieBort/06-jobs-api/blob/9844a29b871e6c8181ae7a427983d7a8a48f51f8/group-sessions-files/20260128-lesson10-agenda.md).
 
 2. Any Questions - Interrupt me at any time for questions or comments.
 
 3. Explain the [Resources](#resources-were-using-today) below.
 
-4. I will walk through the code to
-   - highlight what is covered in this week's lesson,
-   - explain what I wrote and and why,
-   - and create opportunities for you to ask questions.
+4. I will demonstrate the process of deploying the Node Express app to Render.
 
-   To that end, we'll briefly go through the notes I have drafted: [URL](https://github.com/JamieBort/06-jobs-api/blob/week10/group-sessions-files/20260128-lesson10-notes.md) / [Link](../group-sessions-files/20260128-lesson10-notes.md) (if you're viewing this file via the repo website)
+   To that end, we'll briefly go through the notes [deployment notes](./20260128-lesson10-notes.md/#deploying-to-rendercom) I have drafted.
 
-5. Lastly, I'll demonstrate the process of deploying the Node Express app to Render.
+5. Lastly, I will briefly go over the [dependency notes](./20260128-lesson10-notes.md/#dependencies-used-in-this-lesson) I took on the `dependencies` we used for this lesson.
 
 ### Resources we're using today
 
@@ -34,7 +31,7 @@ Wednesday, 21 January 2026
 - Render Dashboard: https://dashboard.render.com/
 - My notes for this session: [URL](https://github.com/JamieBort/06-jobs-api/blob/week10/group-sessions-files/20260128-lesson10-notes.md) / [link](../group-sessions-files/20260128-lesson10-notes.md) (if you're inside the repo)
 - The branch containing my code, agenda, etc. for this lesson: https://github.com/JamieBort/06-jobs-api/tree/week10
-- Link to today's video: (Come back to this file. I'll paste it here once it is published.)
+- Link to today's video: https://youtu.be/6DcYHurFq0Y
 
 #### TO-DO items for this session
 
@@ -49,12 +46,11 @@ My personal checklist (to make sure I don't forget anything).
     - FWIW, it will be recorded.
 
 - Beginning of meeting
-  - [ ] Enable live closed captions.
-  - [ ] Enable transcriptions. (this MIGHT not be necessary)
-  - [ ] Put the agenda link in the group chat:
-  - [ ] Create new `week10-ctd-group-session` branch off of the `week10` branch.
-  - [ ] Walk through the code. What was written and why?
+  - [x] Enable live closed captions.
+  - [x] Enable transcriptions. (this MIGHT not be necessary)
+  - [x] Put the agenda link in the group chat:
+  - [x] Walk through the code. What was written and why?
 
 - End of meeting
-  - [ ] Save transcriptions.
-  - [ ] Stop recording.
+  - [x] Save transcriptions.
+  - [x] Stop recording.
