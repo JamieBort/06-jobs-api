@@ -119,7 +119,7 @@ const deleteJob = async (req, res) => {
 	}); // Deletes the job if it exists and belongs to the user
 
 	if (!job) throw new NotFoundError(`No job with id ${jobId}`); // Throws 404 if job not found
-	res.status(StatusCodes.OK).send("Deleted that job."); // Sends 200 OK ~~with no content to confirm deletion~~
+	res.status(StatusCodes.OK).json({ msg: "The entry was deleted." }); // Sends 200 OK
 };
 
 module.exports = {

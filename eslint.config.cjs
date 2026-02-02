@@ -1,5 +1,9 @@
 // eslint.config.cjs config file for ESLint
 
+// TODO: Figure out and address the following
+// 1. what the name of the file should be. What the file extension should be.
+// 2. What the options array should contain considering we're using node express on the back end and "regular js on the front end."
+
 const js = require("@eslint/js");
 const globals = require("globals");
 const { defineConfig } = require("eslint/config");
@@ -25,8 +29,8 @@ module.exports = defineConfig([
 		},
 		rules: {
 			"no-console": "error",
-			// "no-unused-vars": "error",
-			"no-unused-vars": ["error", { args: "all" }],
+			"no-unused-vars": "error",
+			// "no-unused-vars": ["error", { args: "all" }],
 			// "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
 		},
 	},

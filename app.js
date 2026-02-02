@@ -1,10 +1,16 @@
 // ./app.js
 // Main application entry point: sets up Express server, middleware, routes, and connects to the database.
+// Correct order: all imports first, app creation second, middleware third, routes fourth, errors last.
 
 require("dotenv").config(); // Loads environment variables from a .env file into process.env for configuration and secrets
 // For reference https://www.npmjs.com/package/express-async-errors
 require("express-async-errors"); // Extends Express to automatically forward async errors to the error handler
 
+const mongoose = require("mongoose");
+const { StatusCodes } = require("http-status-codes");
+
+// third-party middleware
+const express = require("express"); // Imports the Express framework to create the web server
 // extra security packages
 const helmet = require("helmet");
 const cors = require("cors");
@@ -15,10 +21,6 @@ const rateLimiter = require("express-rate-limit");
 // const swaggerUI = require("swagger-ui-express"); // Original code commented out
 // const YAML = require("yamljs"); // Original code commented out
 // const swaggerDocument = YAML.load("./swagger.yaml"); // Original code commented out
-
-const express = require("express"); // Imports the Express framework to create the web server
-const app = express(); // Instantiates the Express application used to configure middleware and routes
-
 const connectDB = require("./db/connect"); // Imports the database connection helper to initialize MongoDB
 const authenticateUser = require("./middleware/authentication"); // Imports middleware to enforce authentication on protected routes
 
@@ -26,9 +28,11 @@ const authenticateUser = require("./middleware/authentication"); // Imports midd
 const authRouter = require("./routes/auth"); // Imports route handlers for authentication-related endpoints
 const jobsRouter = require("./routes/jobs"); // Imports route handlers for job-related endpoints
 
-// error handler
+// error handler middleware
 const notFoundMiddleware = require("./middleware/not-found"); // Imports middleware to handle unmatched routes (404 errors)
 const errorHandlerMiddleware = require("./middleware/error-handler"); // Imports centralized error handling logic
+
+const app = express(); // Instantiates the Express application used to configure middleware and routes
 
 app.set("trust proxy", 1);
 app.use(
@@ -37,16 +41,34 @@ app.use(
 		max: 100, // limit each IP to 100 requests per windowMs
 	}),
 );
-
 app.use(express.json()); // Enables parsing of incoming JSON payloads so req.body contains parsed data
 app.use(helmet());
 app.use(cors());
 app.use(xss());
+app.use(express.static("public"));
 
 // app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument)); // Original code commented out
 
+// TODO: Once `app.get("/health", async (req, res) => {}` is working, remove this line of code.
 // A dummy GET route to verify everything is working once the app has been deployed.
-app.get("/", (req, res) => res.send("You've reached the Jobs API."));
+app.get("/test", (req, res) => res.send("You've reached the Jobs API."));
+
+// TODO: Clean this up. Specifically, modify the json object in the catch.
+// Health check endpoint (MongoDB)
+app.get("/health", async (req, res) => {
+	try {
+		// Ping the MongoDB server
+		await mongoose.connection.db.admin().ping();
+
+		res.json({ status: "ok", db: "connected" });
+	} catch (err) {
+		res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+			status: "error",
+			db: "not connected",
+			error: err.message,
+		});
+	}
+});
 
 // routes
 app.use("/api/v1/auth", authRouter); // Registers authentication routes under a versioned API path
