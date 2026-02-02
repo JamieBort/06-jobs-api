@@ -1,5 +1,7 @@
 // ./public/addEdit.js
 
+// TODO: change `e`, as in "e.target", to event (or something similar).
+
 // TODO: Update the database password.
 
 // TODO: Put the following comment in the files that contain the "div handling modules follow this pattern."

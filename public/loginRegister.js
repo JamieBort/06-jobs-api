@@ -1,5 +1,7 @@
 // ./public/loginRegister.js
 
+// TODO: change `e`, as in "e.target", to event (or something similar).
+
 // Each of the div handling modules follow this pattern.
 // Required imports (used when one div handler calls another) are resolved up front.
 // Then, within the handler function, the div and its controls are defined. Also, within the handler function, an event handler is declared to handle mouse clicks within the div.
