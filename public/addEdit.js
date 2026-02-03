@@ -4,10 +4,10 @@
 // Required imports (used when one div handler calls another) are resolved up front.
 // Then, within the handler function, the div and its controls are defined. Also, within the handler function, an event handler is declared to handle mouse clicks within the div.
 
-// TODO: Address the "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'" warnings in these files.
 import { enableInput, inputEnabled, message, setDiv, token } from "./index.js";
 import { showJobs } from "./jobs.js";
 
+let jobsDiv = null;
 let addEditDiv = null;
 let company = null;
 let position = null;
@@ -20,7 +20,8 @@ export const handleAddEdit = () => {
 	position = document.getElementById("position");
 	status = document.getElementById("status");
 	addingJob = document.getElementById("adding-job");
-	// const editCancel = document.getElementById("edit-cancel"); // TODO: Add cancel functionality.
+	jobsDiv = document.getElementById("jobs");
+	const editCancel = document.getElementById("edit-cancel");
 
 	addEditDiv.addEventListener("click", async (event) => {
 		if (inputEnabled && event.target.nodeName === "BUTTON") {
@@ -72,6 +73,8 @@ export const handleAddEdit = () => {
 					message.textContent = "A communication error occurred.";
 				}
 				enableInput(true);
+			} else if (event.target === editCancel) {
+				setDiv(jobsDiv);
 			}
 		}
 	});

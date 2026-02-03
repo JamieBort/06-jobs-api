@@ -12,7 +12,6 @@ const port = process.env.PORT || 3000; // Selects the server port from environme
 const start = async () => {
 	// Defines an async startup function to initialize dependencies before listening
 	try {
-		// TODO: Update the database password.
 		await connectDB(process.env.MONGO_URI); // Establishes a database connection using the configured MongoDB URI
 		app.listen(
 			port,
