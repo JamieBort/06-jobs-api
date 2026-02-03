@@ -1,7 +1,5 @@
 // ./public/register.js
 
-// TODO: change `e`, as in "e.target", to event (or something similar).
-
 // Each of the div handling modules follow this pattern.
 // Required imports (used when one div handler calls another) are resolved up front.
 // Then, within the handler function, the div and its controls are defined. Also, within the handler function, an event handler is declared to handle mouse clicks within the div.
@@ -10,7 +8,7 @@ import {
 	inputEnabled,
 	setDiv,
 	message,
-	token,
+	// token, // NOTE: not used.
 	enableInput,
 	setToken,
 } from "./index.js";
@@ -32,9 +30,9 @@ export const handleRegister = () => {
 	const registerButton = document.getElementById("register-button");
 	const registerCancel = document.getElementById("register-cancel");
 
-	registerDiv.addEventListener("click", async (e) => {
-		if (inputEnabled && e.target.nodeName === "BUTTON") {
-			if (e.target === registerButton) {
+	registerDiv.addEventListener("click", async (event) => {
+		if (inputEnabled && event.target.nodeName === "BUTTON") {
+			if (event.target === registerButton) {
 				if (password1.value != password2.value) {
 					message.textContent = "The passwords entered do not match.";
 				} else {
@@ -68,13 +66,14 @@ export const handleRegister = () => {
 							message.textContent = data.msg;
 						}
 					} catch (err) {
+						// eslint-disable-next-line no-console
 						console.error(err);
 						message.textContent = "A communications error occurred.";
 					}
 
 					enableInput(true);
 				}
-			} else if (e.target === registerCancel) {
+			} else if (event.target === registerCancel) {
 				name.value = "";
 				email1.value = "";
 				password1.value = "";

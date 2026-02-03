@@ -8,12 +8,6 @@ Wednesday, 04 February 2026
 
 - [ ] Add comments to all the new code.
 
-- [ ] Refactor.
-
-- [ ] Add "delete" functionality.
-
-<!-- TODO: Refactor. -->
-<!-- TODO: Add "delete" functionality. -->
 <!-- TODO: Add comments to all the new code. -->
 
 original commit/commit to compare to

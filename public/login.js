@@ -4,12 +4,10 @@
 // Required imports (used when one div handler calls another) are resolved up front.
 // Then, within the handler function, the div and its controls are defined. Also, within the handler function, an event handler is declared to handle mouse clicks within the div.
 
-// TODO: change `e`, as in "e.target", to event (or something similar).
-
 import {
 	inputEnabled,
 	setDiv,
-	token,
+	// token, // NOTE: not used.
 	message,
 	enableInput,
 	setToken,
@@ -28,9 +26,9 @@ export const handleLogin = () => {
 	const logonButton = document.getElementById("logon-button");
 	const logonCancel = document.getElementById("logon-cancel");
 
-	loginDiv.addEventListener("click", async (e) => {
-		if (inputEnabled && e.target.nodeName === "BUTTON") {
-			if (e.target === logonButton) {
+	loginDiv.addEventListener("click", async (event) => {
+		if (inputEnabled && event.target.nodeName === "BUTTON") {
+			if (event.target === logonButton) {
 				enableInput(false);
 
 				try {
@@ -58,12 +56,13 @@ export const handleLogin = () => {
 						message.textContent = data.msg;
 					}
 				} catch (err) {
+					// eslint-disable-next-line no-console
 					console.error(err);
 					message.textContent = "A communications error occurred.";
 				}
 
 				enableInput(true);
-			} else if (e.target === logonCancel) {
+			} else if (event.target === logonCancel) {
 				email.value = "";
 				password.value = "";
 				showLoginRegister();

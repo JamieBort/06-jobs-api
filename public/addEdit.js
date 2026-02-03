@@ -1,9 +1,5 @@
 // ./public/addEdit.js
 
-// TODO: change `e`, as in "e.target", to event (or something similar).
-
-// TODO: Put the following comment in the files that contain the "div handling modules follow this pattern."
-
 // Each of the div handling modules follow this pattern.
 // Required imports (used when one div handler calls another) are resolved up front.
 // Then, within the handler function, the div and its controls are defined. Also, within the handler function, an event handler is declared to handle mouse clicks within the div.
@@ -24,11 +20,11 @@ export const handleAddEdit = () => {
 	position = document.getElementById("position");
 	status = document.getElementById("status");
 	addingJob = document.getElementById("adding-job");
-	const editCancel = document.getElementById("edit-cancel");
+	// const editCancel = document.getElementById("edit-cancel"); // TODO: Add cancel functionality.
 
-	addEditDiv.addEventListener("click", async (e) => {
-		if (inputEnabled && e.target.nodeName === "BUTTON") {
-			if (e.target === addingJob) {
+	addEditDiv.addEventListener("click", async (event) => {
+		if (inputEnabled && event.target.nodeName === "BUTTON") {
+			if (event.target === addingJob) {
 				enableInput(false);
 
 				let method = "POST";
@@ -71,6 +67,7 @@ export const handleAddEdit = () => {
 						message.textContent = data.msg;
 					}
 				} catch (err) {
+					// eslint-disable-next-line no-console
 					console.log(err);
 					message.textContent = "A communication error occurred.";
 				}
@@ -117,6 +114,7 @@ export const showAddEdit = async (jobId) => {
 				showJobs();
 			}
 		} catch (err) {
+			// eslint-disable-next-line no-console
 			console.log(err);
 			message.textContent = "A communications error has occurred.";
 			showJobs();
@@ -153,6 +151,7 @@ export const deleteJob = async (jobId) => {
 				message.textContent = data.msg || "Delete failed.";
 			}
 		} catch (err) {
+			// eslint-disable-next-line no-console
 			console.log(err);
 			message.textContent = "A communication error occurred.";
 		}

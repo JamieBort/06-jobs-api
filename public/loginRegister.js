@@ -1,7 +1,5 @@
 // ./public/loginRegister.js
 
-// TODO: change `e`, as in "e.target", to event (or something similar).
-
 // Each of the div handling modules follow this pattern.
 // Required imports (used when one div handler calls another) are resolved up front.
 // Then, within the handler function, the div and its controls are defined. Also, within the handler function, an event handler is declared to handle mouse clicks within the div.
@@ -17,11 +15,11 @@ export const handleLoginRegister = () => {
 	const login = document.getElementById("logon");
 	const register = document.getElementById("register");
 
-	loginRegisterDiv.addEventListener("click", (e) => {
-		if (inputEnabled && e.target.nodeName === "BUTTON") {
-			if (e.target === login) {
+	loginRegisterDiv.addEventListener("click", (event) => {
+		if (inputEnabled && event.target.nodeName === "BUTTON") {
+			if (event.target === login) {
 				showLogin();
-			} else if (e.target === register) {
+			} else if (event.target === register) {
 				showRegister();
 			}
 		}

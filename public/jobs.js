@@ -4,8 +4,6 @@
 // Required imports (used when one div handler calls another) are resolved up front.
 // Then, within the handler function, the div and its controls are defined. Also, within the handler function, an event handler is declared to handle mouse clicks within the div.
 
-// TODO: change `e`, as in "e.target", to event (or something similar).
-
 import {
 	inputEnabled,
 	setDiv,
@@ -28,17 +26,17 @@ export const handleJobs = () => {
 	jobsTable = document.getElementById("jobs-table");
 	jobsTableHeader = document.getElementById("jobs-table-header");
 
-	jobsDiv.addEventListener("click", (e) => {
-		if (inputEnabled && e.target.nodeName === "BUTTON") {
-			if (e.target === addJob) {
+	jobsDiv.addEventListener("click", (event) => {
+		if (inputEnabled && event.target.nodeName === "BUTTON") {
+			if (event.target === addJob) {
 				showAddEdit(null);
-			} else if (e.target.classList.contains("editButton")) {
+			} else if (event.target.classList.contains("editButton")) {
 				message.textContent = "";
-				showAddEdit(e.target.dataset.id);
-			} else if (e.target.classList.contains("deleteButton")) {
-				console.log("Attempting to delete from jobs.js file.");
-				deleteJob(e.target.dataset.id);
-			} else if (e.target === logoff) {
+				showAddEdit(event.target.dataset.id);
+			} else if (event.target.classList.contains("deleteButton")) {
+				// console.log("Attempting to delete from jobs.js file.");
+				deleteJob(event.target.dataset.id);
+			} else if (event.target === logoff) {
 				setToken(null);
 
 				message.textContent = "You have been logged off.";
@@ -90,6 +88,7 @@ export const showJobs = async () => {
 			message.textContent = data.msg;
 		}
 	} catch (err) {
+		// eslint-disable-next-line no-console
 		console.log(err);
 		message.textContent = "A communication error occurred.";
 	}
