@@ -2,8 +2,6 @@
 
 // TODO: change `e`, as in "e.target", to event (or something similar).
 
-// TODO: Update the database password.
-
 // TODO: Put the following comment in the files that contain the "div handling modules follow this pattern."
 
 // Each of the div handling modules follow this pattern.
@@ -124,6 +122,40 @@ export const showAddEdit = async (jobId) => {
 			showJobs();
 		}
 
+		enableInput(true);
+	}
+};
+
+export const deleteJob = async (jobId) => {
+	if (!jobId) {
+		company.value = "";
+		position.value = "";
+		status.value = "pending";
+		addingJob.textContent = "add";
+		message.textContent = "";
+
+		setDiv(addEditDiv);
+	} else {
+		enableInput(false);
+		try {
+			const response = await fetch(`/api/v1/jobs/${jobId}`, {
+				method: "DELETE",
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			});
+
+			if (response.status === 200 || response.status === 204) {
+				message.textContent = "The job was deleted";
+				showJobs(); // refresh table
+			} else {
+				const data = await response.json();
+				message.textContent = data.msg || "Delete failed.";
+			}
+		} catch (err) {
+			console.log(err);
+			message.textContent = "A communication error occurred.";
+		}
 		enableInput(true);
 	}
 };

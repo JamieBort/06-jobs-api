@@ -1,5 +1,6 @@
 // ./server.js
 
+// Main application entry point: ....
 // Responsible for starting the server and connecting to MongoDB
 
 require("dotenv").config(); // Loads environment variables from .env file into process.env for configuration and secrets
