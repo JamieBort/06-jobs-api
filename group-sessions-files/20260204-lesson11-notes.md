@@ -1,4 +1,4 @@
-## CtD Group Mentor Session Notes for Lesson 10 / Jobs API Part 2.
+## CtD Group Mentor Session Notes for Lesson 11 / A Front End for the Jobs API
 
 Wednesday, 04 February 2026
 

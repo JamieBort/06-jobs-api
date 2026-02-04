@@ -4,7 +4,7 @@
 
 ### Housekeeping Items
 
-1. Go over this agenda. Also found here: https://github.com/JamieBort/06-jobs-api/blob/week9/agenda.md
+1. Go over this agenda. Also found here: https://github.com/JamieBort/06-jobs-api/blob/week9/agenda.md // TODO: Update these links.
 
 2. Any Questions - Interrupt me at any time for questions or comments.
 
@@ -36,7 +36,7 @@
     - HTTP Status Codes: https://www.npmjs.com/package/http-status-codes
     - Extend Express to forward async errors to the error handlers: https://www.npmjs.com/package/express-async-errors
 
-- The branch containing my code, agenda, etc.: https://github.com/JamieBort/06-jobs-api/tree/week9
+- The branch containing my code, agenda, etc.: https://github.com/JamieBort/06-jobs-api/tree/week9 // TODO: Update these links.
 
 - Link to today's video: https://youtu.be/zvCa9WQn5YA
 
