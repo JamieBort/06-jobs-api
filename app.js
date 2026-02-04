@@ -1,6 +1,6 @@
 // ./app.js
 
-// Main application entry point: sets up Express server, middleware, routes, and connects to the database.
+// Sets up middleware and routes.
 // Correct order: all imports first, app creation second, middleware third, routes fourth, errors last.
 
 // For reference https://www.npmjs.com/package/express-async-errors
