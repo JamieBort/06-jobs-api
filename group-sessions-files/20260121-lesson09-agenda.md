@@ -4,7 +4,7 @@
 
 ### Housekeeping Items
 
-1. Go over this agenda. Also found here: https://github.com/JamieBort/06-jobs-api/blob/week9/agenda.md // TODO: Update these links.
+1. Go over this agenda. Also found [here](https://github.com/JamieBort/06-jobs-api/blob/main/group-sessions-files/20260121-lesson09-agenda.md)
 
 2. Any Questions - Interrupt me at any time for questions or comments.
 
@@ -24,7 +24,7 @@
 - [Postman](https://www.postman.com/) API (Application Programming Interface) platform
 - MongoDB: https://cloud.mongodb.com/
 - `Node.js Projects` Video: https://www.youtube.com/watch?v=rltfdjcXjmk
-- `Jobs API - part 1` Lesson: https://classes.codethedream.org/course/node-v3/lion?week=11&lesson=Jobs%20API%20-%20part%201
+- [Jobs API - part 1](https://classes.codethedream.org/course/node-v3/lion?week=11&lesson=Jobs%20API%20-%20part%201) Lesson
 - Documentation
   - MongoDB
     - Validation: https://mongoosejs.com/docs/validation.html
@@ -36,9 +36,9 @@
     - HTTP Status Codes: https://www.npmjs.com/package/http-status-codes
     - Extend Express to forward async errors to the error handlers: https://www.npmjs.com/package/express-async-errors
 
-- The branch containing my code, agenda, etc.: https://github.com/JamieBort/06-jobs-api/tree/week9 // TODO: Update these links.
+- The [branch](https://github.com/JamieBort/06-jobs-api/tree/week9) containing my code, agenda, etc.
 
-- Link to today's video: https://youtu.be/zvCa9WQn5YA
+- [Link](https://youtu.be/zvCa9WQn5YA) to the recording of today's video.
 
 ### TO-DO items for this session
 

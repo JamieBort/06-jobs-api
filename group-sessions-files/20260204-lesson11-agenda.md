@@ -6,7 +6,7 @@ Wednesday, 04 February 2026
 
 ### Housekeeping Items
 
-1. (Briefly) Go over this agenda. It is also found [here](https://github.com/JamieBort/06-jobs-api/blob/week11/group-sessions-files/20260204-lesson11-agenda.md).
+1. (Briefly) Go over this agenda. It is also found [here](https://github.com/JamieBort/06-jobs-api/blob/week11/group-sessions-files/20260204-lesson11-agenda.md). // TODO: Update the URL to this link.
 
 2. Any Questions - Interrupt me at any time for questions or comments.
 
@@ -24,21 +24,4 @@ Wednesday, 04 February 2026
 - (_Nothing new with Render.com this week._)
 - My [notes](20260204-lesson11-notes.md) for this session.
 - The [branch](https://github.com/JamieBort/06-jobs-api/tree/week11) containing my code, agenda, etc. for this lesson.
-- Link to today's video: [To be added after the group mentor session.]
-
-#### TO-DO items for this session
-
-My personal checklist (to make sure I don't forget anything).
-
-- Before meeting
-  - [x] Paste url to this file in the agenda above.
-
-- Beginning of meeting
-  - [ ] Enable live closed captions.
-  - [ ] Enable transcriptions. (this MIGHT not be necessary)
-  - [ ] Put the agenda link in the group chat:
-  - [ ] Walk through the code. What was written and why?
-
-- End of meeting
-  - [ ] Save transcriptions.
-  - [ ] Stop recording.
+- Link to today's video: https://youtu.be/-PsdegHbjCE

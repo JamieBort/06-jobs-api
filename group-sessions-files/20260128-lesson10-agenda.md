@@ -6,7 +6,7 @@ Wednesday, 21 January 2026
 
 ### Housekeeping Items
 
-1. (Briefly) Go over this agenda. It is also found [here](https://github.com/JamieBort/06-jobs-api/blob/9844a29b871e6c8181ae7a427983d7a8a48f51f8/group-sessions-files/20260128-lesson10-agenda.md). // TODO: Update these links.
+1. (Briefly) Go over this agenda. It is also found [here](https://github.com/JamieBort/06-jobs-api/blob/main/group-sessions-files/20260128-lesson10-agenda.md).
 
 2. Any Questions - Interrupt me at any time for questions or comments.
 
@@ -14,9 +14,9 @@ Wednesday, 21 January 2026
 
 4. I will demonstrate the process of deploying the Node Express app to Render.
 
-   To that end, we'll briefly go through the notes [deployment notes](./20260128-lesson10-notes.md/#deploying-to-rendercom) I have drafted. // TODO: Update these links.
+   To that end, we'll briefly go through the notes [deployment notes](./20260128-lesson10-notes.md/#deploying-to-rendercom) I have drafted.
 
-5. Lastly, I will briefly go over the [dependency notes](./20260128-lesson10-notes.md/#dependencies-used-in-this-lesson) I took on the `dependencies` we used for this lesson. // TODO: Update these links.
+5. Lastly, I will briefly go over the [dependency notes](./20260128-lesson10-notes.md/#dependencies-used-in-this-lesson) I took on the `dependencies` we used for this lesson.
 
 ### Resources we're using today
 
@@ -29,8 +29,8 @@ Wednesday, 21 January 2026
     - xss-clean:https://www.npmjs.com/package/xss-clean
     - express-rate-limit: https://www.npmjs.com/package/express-rate-limit
 - Render Dashboard: https://dashboard.render.com/
-- My notes for this session: [URL](https://github.com/JamieBort/06-jobs-api/blob/week10/group-sessions-files/20260128-lesson10-notes.md) / [link](../group-sessions-files/20260128-lesson10-notes.md) (if you're inside the repo) // TODO: Update these links.
-- The branch containing my code, agenda, etc. for this lesson: https://github.com/JamieBort/06-jobs-api/tree/week10 // TODO: Update these links.
+- My [notes](https://github.com/JamieBort/06-jobs-api/blob/main/group-sessions-files/20260128-lesson10-notes.md) for this session. (The [link](../group-sessions-files/20260128-lesson10-notes.md) if you're inside the repo.)
+- The [branch](https://github.com/JamieBort/06-jobs-api/tree/week10) containing my code, agenda, etc. for this lesson.
 - Link to today's video: https://youtu.be/6DcYHurFq0Y
 
 #### TO-DO items for this session
